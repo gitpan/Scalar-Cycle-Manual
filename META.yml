@@ -1,6 +1,6 @@
 ---
 name: Scalar-Cycle-Manual
-version: 0.01
+version: 0.02
 author:
   - 'Khemir Nadim ibn Hamouda. <nadim@khemir.net>'
 abstract: "Manualy cycle through a list of values\n"
@@ -27,8 +27,8 @@ requires:
 provides:
   Scalar::Cycle::Manual:
     file: lib/Scalar/Cycle/Manual.pm
-    version: 0.01
-generated_by: Module::Build version 0.2806
+    version: 0.02
+generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2

@@ -15,7 +15,7 @@ use Sub::Exporter -setup =>
 	};
 	
 use vars qw ($VERSION);
-$VERSION     = 0.01;
+$VERSION = 0.02;
 }
 
 #-------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ $VERSION     = 0.01;
 
 =head1 NAME
 
-Tie::Cycle::Manual - Cycle through a list of values (with manual control)
+Scalar::Cycle::Manual - Cycle through a list of values (with optional automatic incrementation)
 
 =head1 SYNOPSIS
 
@@ -439,49 +439,11 @@ None so far.
 This program is free software; you can redistribute
 it and/or modify it under the same terms as Perl itself.
 
-=head1 RELATED BUGS
-
-L<Scalar::Cycle::Manual> is not dumped properly by L<Data::TreeDumper>. L<Data::Dumper> is fine.
-
-	# Data::Dumper
-	
-	$VAR1 = bless( [
-			 0,
-			 3,
-			 [
-			   'first',
-			   'second',
-			   'third'
-			 ],
-			 1
-		       ], 'Scalar::Cycle::Manual' );
-		       
-	# Data::TreeDumper
-	
-	cyclic_variable
-	`- REF(0x61d220) =  blessed in 'Scalar::Cycle::Manual'  [O1]
-
-Also, Depending on the L<auto_increment> state you may get different Dumps
-
-	$cyclic_variable->auto_increment(1) ;
-	print DumpTree [$cyclic_variable, $cyclic_variable], 'cyclic variable:' ;
-	
-	cyclic_variable
-	|- 0 =  blessed in 'Scalar::Cycle::Manual'  [O1]
-	`- 1 =  blessed in 'Scalar::Cycle::Manual'  [O2]
-
-	$cyclic_variable->auto_increment(0) ;
-	print DumpTree [$cyclic_variable, $cyclic_variable], 'cyclic variable:' ;
-	
-	cyclic_variable
-	|- 0 =  blessed in 'Scalar::Cycle::Manual'  [O1]
-	`- 1 =  blessed in 'Scalar::Cycle::Manual'  [O2 -> O1]
-
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Tie::Cycle::Manual
+    perldoc Scalar::Cycle::Manual
 
 You can also look for information at:
 
@@ -489,18 +451,18 @@ You can also look for information at:
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/Tie-Cycle-Manual>
+L<http://annocpan.org/dist/Scalar-Cycle-Manual>
 
 =item * RT: CPAN's request tracker
 
-Please report any bugs or feature requests to  L <bug-tie-cycle-manual@rt.cpan.org>.
+Please report any bugs or feature requests to  L <bug-Scalar-cycle-manual@rt.cpan.org>.
 
 We will be notified, and then you'll automatically be notified of progress on
 your bug as we make changes.
 
 =item * Search CPAN
 
-L<http://search.cpan.org/dist/Tie-Cycle-Manual>
+L<http://search.cpan.org/dist/Scalar-Cycle-Manual>
 
 =back
 

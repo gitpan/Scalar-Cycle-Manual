@@ -4,7 +4,6 @@ Makefile.PL
 MANIFEST
 README
 META.yml
-README
 Todo.txt
 
 lib/Scalar/Cycle/Manual.pm
